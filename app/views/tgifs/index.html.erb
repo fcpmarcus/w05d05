@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Tgifs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tgifs.each do |tgif| %>
+      <tr>
+        <td><%= tgif.name %></td>
+        <td><%= tgif.email %></td>
+        <td><%= link_to 'Show', tgif %></td>
+        <td><%= link_to 'Edit', edit_tgif_path(tgif) %></td>
+        <td><%= link_to 'Destroy', tgif, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tgif', new_tgif_path %>
